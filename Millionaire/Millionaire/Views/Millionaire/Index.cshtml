@@ -1,0 +1,11 @@
+﻿
+<div class="col-xs-1 text-center">
+    <h3> Choose how many questions you want</h3>
+@using (Html.BeginForm("StartGame", "Millionaire", FormMethod.Post))
+{
+    @Html.ListBox("QuestionCount",
+            new MultiSelectList(new int[] { 5, 10, 15}))
+    <p><input type="submit" value="Send" /></p>
+}
+</div>
+

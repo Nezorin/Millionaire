@@ -1,0 +1,47 @@
+﻿@model GameViewModel
+@{
+    Question currentQuestion = GameViewModel.QuestionQueue.Peek();
+    string FirstVariartTrueness = currentQuestion.FirstVariant == currentQuestion.RightAnswer ? "TrueAnswer" : "FalseAnswer";
+    string SecondVariartTrueness = currentQuestion.SecondVariant == currentQuestion.RightAnswer ? "TrueAnswer" : "FalseAnswer";
+    string ThirdVariartTrueness = currentQuestion.ThirdVariant == currentQuestion.RightAnswer ? "TrueAnswer" : "FalseAnswer";
+    string FourthVariartTrueness = currentQuestion.FourthVariant == currentQuestion.RightAnswer ? "TrueAnswer" : "FalseAnswer";
+}
+<div class="text-center">
+    <h4>@currentQuestion.QuestionText</h4>
+    @using (Html.BeginForm("Game", "Millionaire", FormMethod.Post))
+    {
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="@FirstVariartTrueness">
+                    <input type="submit" asp-for="UserAnswer" value="@currentQuestion.FirstVariant" class="btn btn-primary btn-lg mb-5" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="@SecondVariartTrueness">
+                    <input type="submit" asp-for="UserAnswer" value="@currentQuestion.SecondVariant" class="btn btn-primary btn-lg" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="@ThirdVariartTrueness">
+                    <input type="submit" asp-for="UserAnswer" value="@currentQuestion.ThirdVariant" class="btn btn-primary btn-lg" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="@FourthVariartTrueness">
+                    <input type="submit" asp-for="UserAnswer" value="@currentQuestion.FourthVariant" class="btn btn-primary btn-lg" />
+                </div>
+            </div>
+        </div>
+
+            <input id="fiftyFiftyUsed" name="fiftyFiftyUsed" type="hidden" value="False" />
+            }
+            <h1>Score: @GameViewModel.GameScore.Value</h1>
+            @if (!Model.FiftyFiftyIsUsed)
+            {
+                <button onclick="FiftyFifty()" class="btn btn-secondary" id="FiftyFiftyButton">50:50</button>
+            }
+
+        </div>
+
