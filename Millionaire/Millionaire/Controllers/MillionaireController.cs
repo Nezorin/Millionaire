@@ -18,6 +18,7 @@ namespace Millionaire.Controllers
             ;
             var gameViewModel = new GameViewModel();
             GameViewModel.GameScore = new Score(questionCount);
+            GameViewModel.FiftyFiftyIsUsed = false;
             GameViewModel.QuestionQueue = _millionaireService.GetQuestions(questionCount);
             return View("Game", gameViewModel);
         }
@@ -25,7 +26,7 @@ namespace Millionaire.Controllers
         [HttpPost]
         public IActionResult Game(GameViewModel gameViewModel, bool fiftyFiftyUsed)
         {
-            gameViewModel.FiftyFiftyIsUsed = fiftyFiftyUsed;
+            GameViewModel.FiftyFiftyIsUsed = fiftyFiftyUsed || GameViewModel.FiftyFiftyIsUsed;
             if (gameViewModel.UserAnswer == GameViewModel.QuestionQueue.Dequeue().RightAnswer)
             {
                 GameViewModel.GameScore.Increase();

@@ -34,11 +34,10 @@
                 </div>
             </div>
         </div>
-
-            <input id="fiftyFiftyUsed" name="fiftyFiftyUsed" type="hidden" value="False" />
-            }
+            <input id="fiftyFiftyUsed" name="fiftyFiftyUsed" type="hidden" value="False"/>
+     }
             <h1>Score: @GameViewModel.GameScore.Value</h1>
-            @if (!Model.FiftyFiftyIsUsed)
+            @if (!GameViewModel.FiftyFiftyIsUsed)
             {
                 <button onclick="FiftyFifty()" class="btn btn-secondary" id="FiftyFiftyButton">50:50</button>
             }

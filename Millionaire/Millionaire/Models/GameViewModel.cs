@@ -13,7 +13,7 @@ namespace Millionaire.Models
         public static Score GameScore { get; set; }
         public string UserAnswer { get; set; }
 
-        public bool FiftyFiftyIsUsed = false;
+        public static bool FiftyFiftyIsUsed = false;
     }
     public class Score
     {
