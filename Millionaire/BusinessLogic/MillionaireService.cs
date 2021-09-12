@@ -9,21 +9,17 @@ namespace BusinessLogic
     public class MillionaireService : IMillionaireService
     {
         private readonly IDbRepository _db;
-        private Queue<Question> questionsPerGame;
-
         public MillionaireService(IDbRepository db)
         {
             _db = db;
         }
-        public Question GetNextQuestion()
-        {
-            return questionsPerGame.Peek();
-        }
-
+        /// <summary>
+        /// Take random N questions from epository
+        /// </summary>
+        /// <param name="count"> Count of qusetions to take</param>
         public Queue<Question> GetQuestions(int count)
         {
-            questionsPerGame = new(_db.Get().OrderBy(order => Guid.NewGuid()).Take(count));
-            return questionsPerGame;
+            return new(_db.Get().OrderBy(order => Guid.NewGuid()).Take(count));
         }
     }
 }
