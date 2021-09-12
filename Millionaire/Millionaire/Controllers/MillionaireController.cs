@@ -25,7 +25,7 @@ namespace Millionaire.Controllers
         [HttpPost]
         public IActionResult Game(GameViewModel gameViewModel, bool fiftyFiftyUsed)
         {
-            gameViewModel.FiftyFiftyIsUsed = fiftyFiftyUsed;
+            GameViewModel.FiftyFiftyIsUsed = fiftyFiftyUsed || GameViewModel.FiftyFiftyIsUsed;
             if (gameViewModel.UserAnswer == GameViewModel.QuestionQueue.Dequeue().RightAnswer)
             {
                 GameViewModel.GameScore.Increase();
