@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millionaire", "Millionaire\Millionaire.csproj", "{27BB5E7C-6FAC-4463-9EB1-4B59713672B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Millionaire", "Millionaire\Millionaire.csproj", "{27BB5E7C-6FAC-4463-9EB1-4B59713672B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccesLayer", "DataAccesLayer\DataAccesLayer.csproj", "{B60782D5-4335-4B5D-9C6A-5F3903611A2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccesLayer", "DataAccesLayer\DataAccesLayer.csproj", "{B60782D5-4335-4B5D-9C6A-5F3903611A2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{CA1E7723-D627-42E3-A0BA-87C8474CD94C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{CA1E7723-D627-42E3-A0BA-87C8474CD94C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicTests", "BusinessLogicTests\BusinessLogicTests.csproj", "{9F161DED-D91A-4D17-B1EA-93AFA2721DB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CA1E7723-D627-42E3-A0BA-87C8474CD94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA1E7723-D627-42E3-A0BA-87C8474CD94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA1E7723-D627-42E3-A0BA-87C8474CD94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F161DED-D91A-4D17-B1EA-93AFA2721DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F161DED-D91A-4D17-B1EA-93AFA2721DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F161DED-D91A-4D17-B1EA-93AFA2721DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F161DED-D91A-4D17-B1EA-93AFA2721DB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
