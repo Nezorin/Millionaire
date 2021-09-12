@@ -19,6 +19,10 @@ namespace BusinessLogic
         /// <param name="count"> Count of qusetions to take</param>
         public Queue<Question> GetQuestions(int count)
         {
+            if (count <= 0 || count > _db.Get().Count())
+            {
+                throw new ArgumentOutOfRangeException(nameof(count), "Question count should be a positive number and should not be bigger than amount of questions in DataBase");
+            }
             return new(_db.Get().OrderBy(order => Guid.NewGuid()).Take(count));
         }
     }
